@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Fortune Teller!">
+    <meta name="author" content="Kabir Shah">
+  <title>Fortune Teller</title>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+  <!--[if IE]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+</head>
+<body id="magic_8">
+    <style>
+      body   {
+  width: 50%;
+  height: 50%;
+  margin: auto;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+          text-align: center;
+}
+    p {
+      font-size: 30px;
+        color: white;
+    }
+    input {
+      border: 0;
+      padding: 20px;
+      font-size: 20px;
+    }
+.btn {
+	border: none;
+	font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;;
+	font-size: inherit;
+	color: inherit;
+	background: none;
+	cursor: pointer;
+	padding: 20px 50px;
+	display: inline-block;
+	margin: 15px 30px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-weight: 700;
+	outline: none;
+	position: relative;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+.btn:after {
+	content: '';
+	position: absolute;
+	z-index: -1;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
+}
+        .btn-2 {
+	background: #e74c3c;
+	color: #fff;
+	box-shadow: 0 6px #ab3c3c;
+	-webkit-transition: none;
+	-moz-transition: none;
+	transition: none;
+}
+        /* Button 2c */
+.btn-2c {
+	border-radius: 5px;
+}
+
+.btn-2c:hover {
+	box-shadow: 0 4px #ab3c3c;
+	top: 2px;
+}
+
+.btn-2c:active {
+	box-shadow: 0 0 #ab3c3c;
+	top: 6px;
+}
+    img {
+      padding: 40px 0px 0px 0px;
+    }
+        body {
+        	font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
+  /* Location of the image */
+  background-image: url('https://images.unsplash.com/35/wkjFpgTwSPnxksbAxnkA_IMG_5192.jpg?ixlib=rb-0.3.5&q=80&fm=jpg&s=d64b38a00d5675cf9b46b93f87f8e1ff');
+  
+  /* Background image is centered vertically and horizontally at all times */
+  background-position: center center;
+  
+  /* Background image doesn't tile */
+  background-repeat: no-repeat;
+  
+  /* Background image is fixed in the viewport so that it doesn't move when 
+     the content's height is greater than the image's height */
+  background-attachment: fixed;
+  
+  /* This is what makes the background image rescale based
+     on the container's size */
+  background-size: cover;
+  
+  /* Set a background color that will be displayed
+     while the background image is loading */
+  background-color: #464646;
+}
+    </style>
+ <p> How can I help you today? </p>
+
+<input type="text" placeholder="Enter a question" id="text" onkeydown="if (event.keyCode == 13) document.getElementById('answerButton').click()">
+
+<button class="btn btn-2 btn-2c" id="answerButton"> Answer me </button>
+<p id="answerContainer"></p>
+    <script>
+        var answers = [
+  'Maybe.', 'Certainly not.', 'I hope so.', 'Not in your wildest dreams.',
+  'There is a good chance.', 'Quite likely.', 'I think so.', 'I hope not.',
+  'I hope so.', 'Never!', 'Fuhgeddaboudit.', 'Ahaha! Really?!?', 'Pfft.',
+  'Sorry, bucko.', 'Yes. Isn\'t it obvious?', 'No. Just No.', 'The future is bleak.',
+  'The future is uncertain.', 'I would rather not say.', 'Who cares?',
+  'Possibly.', 'Never, ever, ever.', 'There is a small chance.', 'Yes!'];
+
+document.getElementById('answerButton').onclick = function () {
+var answer = answers[Math.floor(Math.random() * answers.length)];
+    document.getElementById('answerContainer').innerHTML = answer;
+};
+
+    </script>
+</body>
+</html>
