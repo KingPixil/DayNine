@@ -124,16 +124,10 @@
   'The future is uncertain.', 'I would rather not say.', 'Who cares?',
   'Possibly.', 'Never, ever, ever.', 'There is a small chance.', 'Yes!'];
 
-if(document.getElementById("text").value == "Is Kabir good at coding?") {
-	document.getElementById('answerButton').onclick = function () {
-var answer = "Of Course He is! He is the best at coding@";
-    document.getElementById('answerContainer').innerHTML = answer;
-} else {
 document.getElementById('answerButton').onclick = function () {
 var answer = answers[Math.floor(Math.random() * answers.length)];
     document.getElementById('answerContainer').innerHTML = answer;
 };
-}
 
     </script>
 </body>
